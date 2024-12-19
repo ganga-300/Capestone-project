@@ -7,7 +7,8 @@ body{
     background-color: black;
 }
 
-.navbar {
+
+  .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -16,6 +17,21 @@ body{
     color: white;
     border-radius: 12px;
   }
+  
+  .nav-left, .nav-right {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .nav-item {
+    cursor: pointer;
+  }
+  
+  .nav-center {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
 
 .imagecontainer{
     display: flex;
@@ -56,7 +72,7 @@ body{
     display: flex;
     flex-wrap: wrap;
     padding-top: 12vh;
-    overflow: auto;
+   overflow: auto;
     gap:1.4rem;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
@@ -121,7 +137,7 @@ footer *{
 
 
 .p{
-    line-height: 0px;
+    /* line-height: 0px; */
     color:#888E97;
     font-size: 10px;
 }
@@ -141,12 +157,21 @@ footer *{
 }
 
     
-.nav-item:hover{
+.navbar span:hover{
     /* color: black; */
     border-bottom:2px solid #131921;
     cursor: pointer;
-    transition: border-bottom 3s ease-in;
+    color:black
+    /* transition: border-bottom 6s ease-in; */
 }
+.nav-left span:hover{
+    border-bottom:2px solid #131921;
+    cursor: pointer;
+    color:black
+}
+
+
+
 
 
 
@@ -161,11 +186,87 @@ footer *{
     }
 }
 
-@media (max-width: 600px) {
-    .navbar{
-        display: flex;
+
+
+    @media (max-width: 768px) {
+        .navbar {
+          flex-direction: column;
+          align-items: stretch;
+          padding: 15px;
+        }
+      
+        .nav-left, .nav-right {
+          justify-content: center;
+          gap: 10px;
+        }
+      
+        .nav-center {
+          text-align: center;
+          margin: 10px 0;
+        }
+
+        .imagecontainer h1 {
+            font-size: 60px;
+            word-spacing: 1vw;
+        }
+    
+        .middle > div {
+            width: 100%;
+            overflow: hidden;
+        }
+    
+        .submit {
+            width: 90%;
+        }
+    
+        .footer {
+            padding-top: 12vh;
+        }
+        /* .p{
+            display: none;
+        } */
+        
+      }
+      
+      
+
+@media (max-width: 480px) {
+
+    .nav-left, .nav-right {
         flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+    
+      .nav-item {
+        font-size: 1rem;
+        padding: 5px 0;
+      }
+    
+      .nav-center {
+        font-size: 1.2rem;
+      }
+    .imagecontainer h1 {
+        font-size: 40px;
     }
 
-}
+    .middle p {
+        font-size: 16px;
+    }
 
+    .digit {
+        height: 48px;
+        width: 40px;
+        margin: 4px;
+    }
+
+    .submit {
+        height: 6vh;
+        font-size: 14px;
+    }
+    /* .p{
+        display: none;
+    } */
+    
+}
+ 
